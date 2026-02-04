@@ -10,8 +10,35 @@ function showSection(sectionId) {
     const selectedSection = document.getElementById(sectionId);
     if (selectedSection) {
         selectedSection.classList.add('active');
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // animate hero counts when arriving on home
+        if (sectionId === 'home') {
+            setTimeout(() => animateCounts(), 300);
+        }
     }
+}
+
+// Animated counters for hero stats
+function animateCounts() {
+    const counters = document.querySelectorAll('.count');
+    counters.forEach(counter => {
+        if (counter.dataset.animated) return; // prevent re-run
+        const target = parseInt(counter.getAttribute('data-target')) || 0;
+        let current = 0;
+        const step = Math.ceil(target / 80) || 1;
+        counter.dataset.animated = 'true';
+
+        const interval = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                counter.textContent = target;
+                clearInterval(interval);
+            } else {
+                counter.textContent = current;
+            }
+        }, 12);
+    });
 }
 
 // Navigation Menu Toggle

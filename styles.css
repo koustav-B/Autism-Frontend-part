@@ -163,6 +163,23 @@ body {
     line-height: 1.6;
 }
 
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.8rem;
+}
+
+.hero-cta .btn-primary {
+    padding: 0.9rem 1.6rem;
+    font-size: 1.05rem;
+    border-radius: 10px;
+}
+
+.hero-cta .btn-secondary {
+    padding: 0.8rem 1.4rem;
+    border-radius: 10px;
+}
+
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -171,23 +188,54 @@ body {
 }
 
 .stat {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+    padding: 1.2rem;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.stat:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.12);
+}
+
+.stat-icon {
+    font-size: 1.6rem;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
 }
 
 .stat h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin: 0;
+    font-weight: 800;
 }
 
 .stat p {
     color: #718096;
     font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Animated counter small style */
+.count {
+    display: inline-block;
+    min-width: 48px;
+    font-variant-numeric: tabular-nums;
 }
 
 .hero-visual {
@@ -715,25 +763,33 @@ footer p {
     margin: 2rem 0;
 }
 
+
 .game-card {
-    background: white;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(247,250,252,0.95));
     padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
-    transition: var(--transition);
-    border: 2px solid transparent;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    border: 0;
 }
 
 .game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    border-color: var(--primary-color);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(102,126,234,0.12);
 }
 
 .game-icon {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
+    width: 84px;
+    height: 84px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.12));
+    color: var(--primary-color);
 }
 
 .game-card h3 {
@@ -754,6 +810,14 @@ footer p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin: 2rem 0;
 }
+
+/* colorful accents for each game icon */
+.games-grid .game-card:nth-child(1) .game-icon { background: linear-gradient(135deg,#ffd6a5,#ffadad); }
+.games-grid .game-card:nth-child(2) .game-icon { background: linear-gradient(135deg,#c7f9cc,#90f2c6); }
+.games-grid .game-card:nth-child(3) .game-icon { background: linear-gradient(135deg,#a5d8ff,#bdb2ff); }
+.games-grid .game-card:nth-child(4) .game-icon { background: linear-gradient(135deg,#ffe6a7,#ffd6f6); }
+.games-grid .game-card:nth-child(5) .game-icon { background: linear-gradient(135deg,#ffb5a7,#ffd6a5); }
+.games-grid .game-card:nth-child(6) .game-icon { background: linear-gradient(135deg,#bde0fe,#c7f9cc); }
 
 /* Appointments Section */
 .appointments-wrapper {
