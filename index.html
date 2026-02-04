@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autism Support Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🧠 Autism Support Platform</h1>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showSection('home')" class="nav-link">Home</a></li>
+                <li><a href="#" onclick="showSection('about')" class="nav-link">About</a></li>
+                <li><a href="#" onclick="showSection('contact')" class="nav-link">Contact</a></li>
+                <li><a href="#" onclick="toggleChat()" class="nav-link">💬 Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome to Autism Support Platform</h1>
+                <p class="hero-subtitle">Empowering Lives Through Comprehensive Support & Resources</p>
+                <p class="hero-description">Access therapy, connect with professionals, play therapeutic games, and find the support you need</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>8+</h3>
+                        <p>Support Services</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Available Help</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1000+</h3>
+                        <p>Happy Users</p>
+                    </div>
+                    <div class="stat">
+                        <h3>6</h3>
+                        <p>Therapeutic Games</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-icon">🧠</div>
+                <div class="floating-icon">🎮</div>
+                <div class="floating-icon">💬</div>
+                <div class="floating-icon">❤️</div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Explore all the support options available to you</p>
+        </div>
+
+        <div class="options-container">
+            <!-- Quiz Option -->
+            <div class="card" onclick="showSection('quiz')">
+                <div class="card-icon">📋</div>
+                <h3>Take the Quiz</h3>
+                <p>Complete our autism screening questionnaire to get insights about potential autism traits.</p>
+                <button class="btn-primary">Start Quiz</button>
+            </div>
+
+            <!-- Speech Therapy Option -->
+            <div class="card" onclick="showSection('speech')">
+                <div class="card-icon">🎤</div>
+                <h3>Speech Therapy</h3>
+                <p>Access speech therapy resources and exercises to improve communication and speaking skills.</p>
+                <button class="btn-primary">Explore Resources</button>
+            </div>
+
+            <!-- Sign Language Recognition Option -->
+            <div class="card" onclick="showSection('signlanguage')">
+                <div class="card-icon">🖐️</div>
+                <h3>Sign Language Recognition</h3>
+                <p>Practice and learn sign language with our AI-powered recognition system.</p>
+                <button class="btn-primary">Start Practice</button>
+            </div>
+
+            <!-- Emotion Detection Option -->
+            <div class="card" onclick="showSection('emotion')">
+                <div class="card-icon">😊</div>
+                <h3>Emotion Detection</h3>
+                <p>Use our AI to detect and understand emotions from facial expressions.</p>
+                <button class="btn-primary">Open Camera</button>
+            </div>
+
+            <!-- Gaming Section -->
+            <div class="card" onclick="showSection('gaming')">
+                <div class="card-icon">🎮</div>
+                <h3>Therapeutic Games</h3>
+                <p>Play engaging games designed to improve focus, memory, and social skills.</p>
+                <button class="btn-primary">Play Now</button>
+            </div>
+
+            <!-- Doctor's Appointment -->
+            <div class="card" onclick="showSection('doctors')">
+                <div class="card-icon">👨‍⚕️</div>
+                <h3>Doctor's Appointment</h3>
+                <p>Schedule appointments, find specialists, and manage your healthcare needs.</p>
+                <button class="btn-primary">Book Appointment</button>
+            </div>
+
+            <!-- Social Services -->
+            <div class="card" onclick="showSection('social')">
+                <div class="card-icon">🤝</div>
+                <h3>Social Services</h3>
+                <p>Access support groups, community resources, and social support programs.</p>
+                <button class="btn-primary">Explore Services</button>
+            </div>
+
+            <!-- Resources -->
+            <div class="card" onclick="showSection('resources')">
+                <div class="card-icon">📚</div>
+                <h3>Resources & Learning</h3>
+                <p>Browse articles, videos, and educational materials about autism.</p>
+                <button class="btn-primary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>Autism Screening Questionnaire</h2>
+            <p class="intro-text">Please answer the following questions honestly. This is a screening tool and not a diagnosis.</p>
+
+            <form id="quizForm" class="quiz-form">
+                <div class="question">
+                    <label>1. Do you prefer to work alone rather than in groups?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="0"> Never</label>
+                        <label><input type="radio" name="q1" value="1"> Sometimes</label>
+                        <label><input type="radio" name="q1" value="2"> Often</label>
+                        <label><input type="radio" name="q1" value="3"> Always</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>2. Do you find it difficult to understand social cues (body language, tone)?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="0"> Never</label>
+                        <label><input type="radio" name="q2" value="1"> Sometimes</label>
+                        <label><input type="radio" name="q2" value="2"> Often</label>
+                        <label><input type="radio" name="q2" value="3"> Always</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>3. Do you have repetitive behaviors or routines?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="0"> Never</label>
+                        <label><input type="radio" name="q3" value="1"> Sometimes</label>
+                        <label><input type="radio" name="q3" value="2"> Often</label>
+                        <label><input type="radio" name="q3" value="3"> Always</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>4. Do you have intense interests in specific topics?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="0"> Never</label>
+                        <label><input type="radio" name="q4" value="1"> Sometimes</label>
+                        <label><input type="radio" name="q4" value="2"> Often</label>
+                        <label><input type="radio" name="q4" value="3"> Always</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>5. Do sensory stimuli (loud noises, bright lights) bother you?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="0"> Never</label>
+                        <label><input type="radio" name="q5" value="1"> Sometimes</label>
+                        <label><input type="radio" name="q5" value="2"> Often</label>
+                        <label><input type="radio" name="q5" value="3"> Always</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>6. Do you prefer following rules and structure?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="0"> Never</label>
+                        <label><input type="radio" name="q6" value="1"> Sometimes</label>
+                        <label><input type="radio" name="q6" value="2"> Often</label>
+                        <label><input type="radio" name="q6" value="3"> Always</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit Quiz</button>
+            </form>
+
+            <div id="quizResult" class="result-container" style="display: none;">
+                <h3>Your Quiz Results</h3>
+                <p id="resultScore"></p>
+                <p id="resultMessage"></p>
+                <p class="disclaimer">This is a screening tool and not a medical diagnosis. Please consult with a healthcare professional for proper evaluation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speech Therapy Section -->
+    <section id="speech" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>Speech Therapy Resources</h2>
+
+            <div class="therapy-grid">
+                <div class="therapy-card">
+                    <h3>🎵 Vowel Pronunciation</h3>
+                    <p>Practice pronouncing vowels: A, E, I, O, U</p>
+                    <button class="btn-secondary" onclick="playAudio('vowels')">Listen & Learn</button>
+                </div>
+
+                <div class="therapy-card">
+                    <h3>👅 Tongue Twisters</h3>
+                    <p>Improve articulation with tongue twisters</p>
+                    <button class="btn-secondary" onclick="playAudio('twisters')">Start Practice</button>
+                </div>
+
+                <div class="therapy-card">
+                    <h3>📱 Conversation Practice</h3>
+                    <p>Practice common conversation starters and responses</p>
+                    <button class="btn-secondary" onclick="showConversation()">Practice Now</button>
+                </div>
+
+                <div class="therapy-card">
+                    <h3>🗣️ Breathing Exercises</h3>
+                    <p>Learn proper breathing techniques for clear speech</p>
+                    <button class="btn-secondary" onclick="startBreathingExercise()">Begin Exercise</button>
+                </div>
+
+                <div class="therapy-card">
+                    <h3>📝 Word Recognition</h3>
+                    <p>Build vocabulary and word recognition skills</p>
+                    <button class="btn-secondary" onclick="startWordGame()">Play Game</button>
+                </div>
+
+                <div class="therapy-card">
+                    <h3>🎙️ Voice Recording</h3>
+                    <p>Record and compare your speech with examples</p>
+                    <button class="btn-secondary" onclick="startRecording()">Start Recording</button>
+                </div>
+            </div>
+
+            <div id="speechContent" class="content-box" style="display: none;"></div>
+        </div>
+    </section>
+
+    <!-- Sign Language Recognition Section -->
+    <section id="signlanguage" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>Sign Language Recognition</h2>
+
+            <div class="sign-language-content">
+                <div class="instruction-box">
+                    <h3>How to Use This Tool</h3>
+                    <p>1. Allow camera access when prompted</p>
+                    <p>2. Perform the sign language gesture</p>
+                    <p>3. AI will recognize and display the meaning</p>
+                    <p>4. Learn and practice at your own pace</p>
+                </div>
+
+                <div class="camera-section">
+                    <video id="signLanguageCamera" width="400" height="300" autoplay></video>
+                    <p id="signLanguageOutput">Ready to capture signs...</p>
+                </div>
+
+                <button class="btn-primary" onclick="startSignLanguageCamera()">Start Camera</button>
+                <button class="btn-secondary" onclick="stopSignLanguageCamera()">Stop Camera</button>
+
+                <div class="sign-lessons">
+                    <h3>Common Signs to Practice</h3>
+                    <div class="lessons-grid">
+                        <div class="lesson-card">
+                            <p>👋 HELLO</p>
+                            <small>Wave your hand from side to side</small>
+                        </div>
+                        <div class="lesson-card">
+                            <p>❤️ LOVE</p>
+                            <small>Cross both hands over your heart</small>
+                        </div>
+                        <div class="lesson-card">
+                            <p>✋ STOP</p>
+                            <small>Open palm, face outward</small>
+                        </div>
+                        <div class="lesson-card">
+                            <p>👍 YES</p>
+                            <small>Thumbs up gesture</small>
+                        </div>
+                        <div class="lesson-card">
+                            <p>👎 NO</p>
+                            <small>Shake your head or wiggle fingers</small>
+                        </div>
+                        <div class="lesson-card">
+                            <p>🤝 HELP</p>
+                            <small>One hand over the other, raise together</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotion Detection Section -->
+    <section id="emotion" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>Emotion Detection</h2>
+
+            <div class="emotion-content">
+                <div class="instruction-box">
+                    <h3>How to Use This Feature</h3>
+                    <p>✓ Allow camera access when prompted</p>
+                    <p>✓ Face the camera clearly</p>
+                    <p>✓ AI will detect your emotions in real-time</p>
+                    <p>✓ Learn to recognize emotions better</p>
+                </div>
+
+                <div class="camera-section">
+                    <video id="emotionCamera" width="400" height="300" autoplay></video>
+                    <div id="emotionOutput" class="emotion-output">
+                        <div class="emotion-display">
+                            <p>Primary Emotion: <strong id="primaryEmotion">Waiting...</strong></p>
+                            <p>Confidence: <strong id="confidence">--</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emotion-controls">
+                    <button class="btn-primary" onclick="startEmotionDetection()">Start Detection</button>
+                    <button class="btn-secondary" onclick="stopEmotionDetection()">Stop Detection</button>
+                </div>
+
+                <div class="emotion-guide">
+                    <h3>Understanding Emotions</h3>
+                    <div class="emotions-grid">
+                        <div class="emotion-card">
+                            <h4>😊 Happy</h4>
+                            <p>Smiling, upturned lips, bright eyes</p>
+                        </div>
+                        <div class="emotion-card">
+                            <h4>😢 Sad</h4>
+                            <p>Downturned lips, tearful eyes</p>
+                        </div>
+                        <div class="emotion-card">
+                            <h4>😠 Angry</h4>
+                            <p>Furrowed brows, tense jaw</p>
+                        </div>
+                        <div class="emotion-card">
+                            <h4>😲 Surprised</h4>
+                            <p>Wide eyes, raised eyebrows, open mouth</p>
+                        </div>
+                        <div class="emotion-card">
+                            <h4>😨 Fearful</h4>
+                            <p>Raised eyebrows, wide eyes, tight lips</p>
+                        </div>
+                        <div class="emotion-card">
+                            <h4>🤢 Disgusted</h4>
+                            <p>Wrinkled nose, raised upper lip</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>About This Platform</h2>
+            <div class="about-content">
+                <p>The Autism Support Platform is designed to provide resources, tools, and support for individuals on the autism spectrum and those seeking to understand autism better.</p>
+                <p>Our mission is to:</p>
+                <ul>
+                    <li>Provide accessible screening tools for autism awareness</li>
+                    <li>Offer speech therapy resources to improve communication</li>
+                    <li>Enable sign language practice with AI assistance</li>
+                    <li>Help users understand and recognize emotions</li>
+                </ul>
+                <p><strong>Disclaimer:</strong> This platform is for educational and support purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare professional for proper
+                    evaluation and diagnosis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>Contact Us</h2>
+            <form class="contact-form" onsubmit="submitContact(event)">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Gaming Section -->
+    <section id="gaming" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>Therapeutic Games</h2>
+            <p class="intro-text">Play engaging games designed specifically for cognitive development and therapeutic benefits.</p>
+
+            <div class="games-grid">
+                <!-- Memory Game -->
+                <div class="game-card">
+                    <div class="game-icon">🧠</div>
+                    <h3>Memory Match</h3>
+                    <p>Enhance memory and concentration with this matching game.</p>
+                    <button class="btn-primary" onclick="startMemoryGame()">Play Game</button>
+                </div>
+
+                <!-- Puzzle Game -->
+                <div class="game-card">
+                    <div class="game-icon">🧩</div>
+                    <h3>Pattern Puzzle</h3>
+                    <p>Solve pattern-based puzzles to improve logical thinking.</p>
+                    <button class="btn-primary" onclick="startPatternPuzzle()">Play Game</button>
+                </div>
+
+                <!-- Color Match -->
+                <div class="game-card">
+                    <div class="game-icon">🎨</div>
+                    <h3>Color Sort Challenge</h3>
+                    <p>Match colors and improve visual recognition skills.</p>
+                    <button class="btn-primary" onclick="startColorMatch()">Play Game</button>
+                </div>
+
+                <!-- Reaction Time -->
+                <div class="game-card">
+                    <div class="game-icon">⚡</div>
+                    <h3>Reaction Master</h3>
+                    <p>Test and improve your reaction time with quick challenges.</p>
+                    <button class="btn-primary" onclick="startReactionGame()">Play Game</button>
+                </div>
+
+                <!-- Number Sequence -->
+                <div class="game-card">
+                    <div class="game-icon">🔢</div>
+                    <h3>Number Sequence</h3>
+                    <p>Complete number sequences and improve mathematical thinking.</p>
+                    <button class="btn-primary" onclick="startNumberGame()">Play Game</button>
+                </div>
+
+                <!-- Word Builder -->
+                <div class="game-card">
+                    <div class="game-icon">📝</div>
+                    <h3>Word Builder</h3>
+                    <p>Build words and improve vocabulary and spelling.</p>
+                    <button class="btn-primary" onclick="startWordBuilder()">Play Game</button>
+                </div>
+            </div>
+
+            <div id="gameContent" class="game-container" style="display: none;"></div>
+        </div>
+    </section>
+
+    <!-- Doctor's Appointment Section -->
+    <section id="doctors" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>Doctor's Appointment Management</h2>
+
+            <div class="appointments-wrapper">
+                <div class="appointment-section">
+                    <h3>Book an Appointment</h3>
+                    <form class="appointment-form" onsubmit="bookAppointment(event)">
+                        <div class="form-group">
+                            <label for="docName">Doctor's Name:</label>
+                            <input type="text" id="docName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialty">Specialty:</label>
+                            <select id="specialty" required>
+                                <option value="">Select Specialty</option>
+                                <option value="psychiatrist">Psychiatrist</option>
+                                <option value="psychologist">Psychologist</option>
+                                <option value="neurologist">Neurologist</option>
+                                <option value="therapist">Speech Therapist</option>
+                                <option value="counselor">Counselor</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentDate">Date:</label>
+                            <input type="date" id="appointmentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentTime">Time:</label>
+                            <input type="time" id="appointmentTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location/Clinic:</label>
+                            <input type="text" id="location" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Book Appointment</button>
+                    </form>
+                </div>
+
+                <div class="appointment-section">
+                    <h3>Your Appointments</h3>
+                    <div id="appointmentsList" class="appointments-list">
+                        <p class="empty-message">No appointments booked yet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctors-directory">
+                <h3>Find Autism Specialists</h3>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <h4>Dr. Emily Johnson</h4>
+                        <p class="specialty">Child Psychiatrist</p>
+                        <p>📍 Downtown Medical Center</p>
+                        <p>📞 (555) 123-4567</p>
+                        <p>⭐ 4.9/5 (125 reviews)</p>
+                        <button class="btn-secondary" onclick="contactDoctor('Dr. Emily Johnson')">Contact</button>
+                    </div>
+
+                    <div class="doctor-card">
+                        <h4>Dr. Michael Chen</h4>
+                        <p class="specialty">Developmental Neurologist</p>
+                        <p>📍 City General Hospital</p>
+                        <p>📞 (555) 234-5678</p>
+                        <p>⭐ 4.8/5 (98 reviews)</p>
+                        <button class="btn-secondary" onclick="contactDoctor('Dr. Michael Chen')">Contact</button>
+                    </div>
+
+                    <div class="doctor-card">
+                        <h4>Dr. Sarah Williams</h4>
+                        <p class="specialty">Clinical Psychologist</p>
+                        <p>📍 Mental Wellness Clinic</p>
+                        <p>📞 (555) 345-6789</p>
+                        <p>⭐ 4.7/5 (110 reviews)</p>
+                        <button class="btn-secondary" onclick="contactDoctor('Dr. Sarah Williams')">Contact</button>
+                    </div>
+
+                    <div class="doctor-card">
+                        <h4>Dr. James Rodriguez</h4>
+                        <p class="specialty">Speech Pathologist</p>
+                        <p>📍 Communication Therapy Center</p>
+                        <p>📞 (555) 456-7890</p>
+                        <p>⭐ 4.9/5 (142 reviews)</p>
+                        <button class="btn-secondary" onclick="contactDoctor('Dr. James Rodriguez')">Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Services Section -->
+    <section id="social" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>Social Services & Support</h2>
+
+            <div class="services-grid">
+                <!-- Support Groups -->
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Support Groups</h3>
+                    <p>Join online and in-person support groups for individuals and families.</p>
+                    <button class="btn-primary" onclick="showServiceDetail('support-groups')">Explore Groups</button>
+                </div>
+
+                <!-- Community Resources -->
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Community Resources</h3>
+                    <p>Find local services, centers, and programs in your area.</p>
+                    <button class="btn-primary" onclick="showServiceDetail('community-resources')">Find Resources</button>
+                </div>
+
+                <!-- Educational Programs -->
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Educational Programs</h3>
+                    <p>Access educational support, tutoring, and academic assistance.</p>
+                    <button class="btn-primary" onclick="showServiceDetail('education')">View Programs</button>
+                </div>
+
+                <!-- Job Support -->
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Job Training & Support</h3>
+                    <p>Career guidance, job training, and employment assistance.</p>
+                    <button class="btn-primary" onclick="showServiceDetail('job-support')">Get Help</button>
+                </div>
+
+                <!-- Crisis Support -->
+                <div class="service-card">
+                    <div class="service-icon">🆘</div>
+                    <h3>Crisis Support</h3>
+                    <p>24/7 crisis hotline and emergency mental health support.</p>
+                    <button class="btn-primary" onclick="showServiceDetail('crisis')">Get Support</button>
+                </div>
+
+                <!-- Legal & Financial -->
+                <div class="service-card">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Legal & Financial Aid</h3>
+                    <p>Information about benefits, disability support, and legal services.</p>
+                    <button class="btn-primary" onclick="showServiceDetail('legal')">Learn More</button>
+                </div>
+            </div>
+
+            <div id="serviceDetails" class="service-details" style="display: none;"></div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('home')">← Back to Home</button>
+            <h2>Resources & Learning Materials</h2>
+
+            <div class="resources-filter">
+                <button class="filter-btn active" onclick="filterResources('all')">All</button>
+                <button class="filter-btn" onclick="filterResources('articles')">Articles</button>
+                <button class="filter-btn" onclick="filterResources('videos')">Videos</button>
+                <button class="filter-btn" onclick="filterResources('guides')">Guides</button>
+                <button class="filter-btn" onclick="filterResources('apps')">Apps</button>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card" data-type="articles">
+                    <div class="resource-type">📄 Article</div>
+                    <h3>Understanding Autism Spectrum Disorder</h3>
+                    <p>A comprehensive guide to understanding ASD, its characteristics, and how it affects daily life.</p>
+                    <a href="#" class="resource-link">Read Article →</a>
+                </div>
+
+                <div class="resource-card" data-type="videos">
+                    <div class="resource-type">🎥 Video</div>
+                    <h3>Communication Tips for Autistic Individuals</h3>
+                    <p>Learn practical communication strategies from speech specialists.</p>
+                    <a href="#" class="resource-link">Watch Video →</a>
+                </div>
+
+                <div class="resource-card" data-type="guides">
+                    <div class="resource-type">📚 Guide</div>
+                    <h3>Sensory Sensitivity Management</h3>
+                    <p>A detailed guide to understanding and managing sensory sensitivities.</p>
+                    <a href="#" class="resource-link">Download Guide →</a>
+                </div>
+
+                <div class="resource-card" data-type="apps">
+                    <div class="resource-type">📱 App</div>
+                    <h3>Autism Support Companion App</h3>
+                    <p>Mobile app with tools for daily routine management and mood tracking.</p>
+                    <a href="#" class="resource-link">Get App →</a>
+                </div>
+
+                <div class="resource-card" data-type="articles">
+                    <div class="resource-type">📄 Article</div>
+                    <h3>Social Skills Development</h3>
+                    <p>Strategies for developing and improving social skills in various settings.</p>
+                    <a href="#" class="resource-link">Read Article →</a>
+                </div>
+
+                <div class="resource-card" data-type="videos">
+                    <div class="resource-type">🎥 Video</div>
+                    <h3>Emotional Regulation Techniques</h3>
+                    <p>Learn evidence-based techniques for managing emotions and stress.</p>
+                    <a href="#" class="resource-link">Watch Video →</a>
+                </div>
+
+                <div class="resource-card" data-type="guides">
+                    <div class="resource-type">📚 Guide</div>
+                    <h3>Supporting Autistic Family Members</h3>
+                    <p>Guide for family members on how to support and understand autistic relatives.</p>
+                    <a href="#" class="resource-link">Download Guide →</a>
+                </div>
+
+                <div class="resource-card" data-type="apps">
+                    <div class="resource-type">📱 App</div>
+                    <h3>Meditation & Mindfulness</h3>
+                    <p>Guided meditation and mindfulness exercises for anxiety reduction.</p>
+                    <a href="#" class="resource-link">Get App →</a>
+                </div>
+
+                <div class="resource-card" data-type="articles">
+                    <div class="resource-type">📄 Article</div>
+                    <h3>Autism in Adults: Late Diagnosis</h3>
+                    <p>Understanding autism diagnosis in adulthood and navigating the journey of discovery.</p>
+                    <a href="#" class="resource-link">Read Article →</a>
+                </div>
+
+                <div class="resource-card" data-type="videos">
+                    <div class="resource-type">🎥 Video</div>
+                    <h3>Sensory Friendly Environments</h3>
+                    <p>Learn how to create sensory-friendly spaces at home, work, and school.</p>
+                    <a href="#" class="resource-link">Watch Video →</a>
+                </div>
+
+                <div class="resource-card" data-type="guides">
+                    <div class="resource-type">📚 Guide</div>
+                    <h3>Daily Living Skills Guide</h3>
+                    <p>Practical guide for developing independence in daily activities and self-care.</p>
+                    <a href="#" class="resource-link">Download Guide →</a>
+                </div>
+
+                <div class="resource-card" data-type="articles">
+                    <div class="resource-type">📄 Article</div>
+                    <h3>Bullying and Autism</h3>
+                    <p>Understanding bullying in autistic individuals and strategies for support and prevention.</p>
+                    <a href="#" class="resource-link">Read Article →</a>
+                </div>
+
+                <div class="resource-card" data-type="videos">
+                    <div class="resource-type">🎥 Video</div>
+                    <h3>Transition Planning for Success</h3>
+                    <p>Planning for transitions in education, employment, and life stages effectively.</p>
+                    <a href="#" class="resource-link">Watch Video →</a>
+                </div>
+
+                <div class="resource-card" data-type="guides">
+                    <div class="resource-type">📚 Guide</div>
+                    <h3>Relationship and Dating Guide</h3>
+                    <p>Comprehensive guide to building healthy relationships and understanding dating dynamics.</p>
+                    <a href="#" class="resource-link">Download Guide →</a>
+                </div>
+
+                <div class="resource-card" data-type="apps">
+                    <div class="resource-type">📱 App</div>
+                    <h3>Social Stories Builder</h3>
+                    <p>Create and practice social stories for common situations and interactions.</p>
+                    <a href="#" class="resource-link">Get App →</a>
+                </div>
+
+                <div class="resource-card" data-type="articles">
+                    <div class="resource-type">📄 Article</div>
+                    <h3>Autism and Co-occurring Conditions</h3>
+                    <p>Understanding ADHD, anxiety, depression, and other conditions common with autism.</p>
+                    <a href="#" class="resource-link">Read Article →</a>
+                </div>
+
+                <div class="resource-card" data-type="videos">
+                    <div class="resource-type">🎥 Video</div>
+                    <h3>Workplace Accommodations</h3>
+                    <p>Strategies for requesting and utilizing accommodations in the workplace.</p>
+                    <a href="#" class="resource-link">Watch Video →</a>
+                </div>
+
+                <div class="resource-card" data-type="guides">
+                    <div class="resource-type">📚 Guide</div>
+                    <h3>Understanding Meltdowns vs Tantrums</h3>
+                    <p>Differentiating between meltdowns and tantrums, and appropriate response strategies.</p>
+                    <a href="#" class="resource-link">Download Guide →</a>
+                </div>
+
+                <div class="resource-card" data-type="apps">
+                    <div class="resource-type">📱 App</div>
+                    <h3>Schedule & Routine Planner</h3>
+                    <p>Visual schedule app to plan daily routines and manage transitions smoothly.</p>
+                    <a href="#" class="resource-link">Get App →</a>
+                </div>
+
+                <div class="resource-card" data-type="articles">
+                    <div class="resource-type">📄 Article</div>
+                    <h3>Executive Function Strategies</h3>
+                    <p>Practical strategies to manage organization, planning, and task management challenges.</p>
+                    <a href="#" class="resource-link">Read Article →</a>
+                </div>
+
+                <div class="resource-card" data-type="videos">
+                    <div class="resource-type">🎥 Video</div>
+                    <h3>Self-Advocacy Techniques</h3>
+                    <p>Learn how to advocate for your needs in various settings and situations.</p>
+                    <a href="#" class="resource-link">Watch Video →</a>
+                </div>
+
+                <div class="resource-card" data-type="guides">
+                    <div class="resource-type">📚 Guide</div>
+                    <h3>Nutrition & Sensory Food Issues</h3>
+                    <p>Understanding sensory food preferences and maintaining healthy nutrition with autism.</p>
+                    <a href="#" class="resource-link">Download Guide →</a>
+                </div>
+
+                <div class="resource-card" data-type="apps">
+                    <div class="resource-type">📱 App</div>
+                    <h3>Emotion Journal & Tracker</h3>
+                    <p>Track emotions, identify patterns, and develop better self-awareness strategies.</p>
+                    <a href="#" class="resource-link">Get App →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot" class="chatbot-widget">
+        <div class="chatbot-header">
+            <h3>🤖 Support Assistant</h3>
+            <button class="close-btn" onclick="toggleChat()">×</button>
+        </div>
+        <div id="chatMessages" class="chat-messages">
+            <div class="chat-message bot-message">
+                <p>Hello! 👋 I'm your Autism Support Assistant. How can I help you today?</p>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatInput(event)">
+            <button onclick="sendChatMessage()">Send</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Autism Support Platform. All rights reserved.</p>
+        <p>Created with ❤️ by Koustav Biswas</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
